@@ -73,34 +73,48 @@ textarea {
 /* Alternar pra desktop */
 /* Só alterna se a largura minima for de 1100px */
 @media (min-width: 1100px) {
+    :root {
+        font-size: 62.5%;
+    }
+    
     #page-landing #container {
         max-width: 1100px;
         display: grid;
         /* O fr fraciona o tamanho em partes iguais */
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 150px 1fr 0.1fr;
+        grid-template-rows: 150px 1fr;
         grid-template-areas: 
-        "proffy button"
-        "image image"
-        "texting texting";
+        "proffy buttons buttons"
+        "image image image"
+        "texting texting texting";
 
-        gap: 30px
+        gap: 20px
     }
 
     .logo-container {
         grid-area: proffy;
+        height: 60%;
+    }
+
+    .logo-container img {
+        height: 80px;
     }
 
     .hero-image {
         grid-area: image;
         width: 70%;
-        height: 530px;
-        margin-top: 50px;
+        height: 380px;
+        margin-top: 30px;
     }
 
     .buttons-container {
-        grid-area: button;
-        width: 110%;
+        grid-area: buttons;
+        justify-content: space-between;
+        height: 50%;
+    }    
+
+    .buttons-container a img {
+        size: 30%;
     }
 
     .total-connections {
